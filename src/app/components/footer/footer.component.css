@@ -1,0 +1,10 @@
+footer {
+    width: 400px;
+    height: 50px;
+    background-color: var(--dark-color);
+}
+
+footer p {
+    color: var(--light-color);
+    margin: 0;
+}
