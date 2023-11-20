@@ -6,16 +6,17 @@
     </div>
     <div class="row flex-grow-1">
         <div class="col-md-12">
-            <form class="d-flex flex-column">
+            <form class="d-flex flex-column" (ngSubmit)="onSubmit()">
                 <label class="fw-bold text-center my-3">Text to Image Generator!</label>
                 <input 
                     placeholder="Enter some text..."
                     class="border border-dark rounded-3 fs-2"
                     name="prompt"
+                    [(ngModel)]="prompt"
                 />
-                <button type="submit" class="btn mt-3 mx-5">GENERATE</button>
+                <button type="submit" class="btn mt-3 mx-5" [disabled]="isLoading">GENERATE</button>
             </form>
-            <img />
+            <img *ngIf="imageUrl" alt="Generated image" />
         </div>
     </div>
     <div class="row">

@@ -1,1 +1,35 @@
-<p>login works!</p>
+<div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+    <div class="row">
+        <div class="col-md-12">
+            <app-header></app-header>
+        </div>
+    </div>
+    <div class="row flex-grow-1">
+        <div class="col-md-12">
+            <form class="d-flex flex-column" (ngSubmit)="onLogin()">
+                <label class="fw-bold text-center my-3">Email</label>
+                <input 
+                    placeholder="Enter your email..."
+                    class="border border-dark rounded-3 fs-2"
+                    name="email"
+                    formControlName="email"
+                />
+
+                <label class="fw-bold text-center my-3">Password</label>
+                <input 
+                    placeholder="Enter your password..."
+                    class="border border-dark rounded-3 fs-2"
+                    name="password"
+                    formControlName="password"
+                />
+
+                <button type="submit" class="btn mt-3 mx-5" [disabled]="isValid">GENERATE</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <app-footer></app-footer>
+        </div>
+    </div>
+</div>
