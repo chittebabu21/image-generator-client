@@ -1,0 +1,11 @@
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+i {
+    color: var(--dark-color);
+}
+
+.container {
+    width: 400px;
+    height: 100vh;
+    background-color: var(--primary-color);
+}

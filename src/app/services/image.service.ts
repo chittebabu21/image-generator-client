@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImageService {
-  private imgUrl = 'http://localhost:4000/images/'
+  private imgUrl = environment.imageUrl;
 
   constructor(private http: HttpClient) { }
 
   // service methods
-  createImage(image: any) {
-    return this.http.post(this.imgUrl, image);
+  createImage(body: any) {
+    return this.http.post(this.imgUrl, body);
   }
 
   getImageByUser(id: number): Observable<any> {

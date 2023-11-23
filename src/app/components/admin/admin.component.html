@@ -1,0 +1,37 @@
+<div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+    <div class="row">
+        <div class="col-md-12">
+            <app-header [isLoggedIn]="true"></app-header>
+        </div>
+    </div>
+
+    <div class="row d-flex flex-grow-1">
+        <div class="col-md-12">
+            <h1 class="fs-2 text-center my-3">Admin Interface</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">
+                            <button class="btn btn-link" (click)="onRefresh()"><i class="fa fa-refresh"></i></button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td>{{ user.user_id }}</td>
+                        <td>{{ user.user_email }}</td>
+                        <td><button *ngIf="user.user_email !== adminEmail" class="btn btn-outline-danger" (click)="onDelete(user.user_id)">X</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <app-footer></app-footer>
+        </div>
+    </div>
+</div>

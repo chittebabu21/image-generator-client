@@ -1,1 +1,48 @@
-<p>register works!</p>
+<div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+    <div class="row">
+        <div class="col-md-12">
+            <app-header [isLoggedIn]="false"></app-header>
+        </div>
+    </div>
+    <div class="row flex-grow-1">
+        <div class="col-md-12">
+            <form class="d-flex flex-column my-5" (ngSubmit)="onRegister()" [formGroup]="registerForm">
+                <label class="fw-bold text-center my-2 align-self-start">Email</label>
+                <input 
+                    placeholder="Enter your email..."
+                    type="email"
+                    class="border border-dark rounded-3 fs-2"
+                    name="user_email"
+                    formControlName="user_email"
+                />
+
+                <label class="fw-bold text-center my-2 align-self-start">Password</label>
+                <input 
+                    placeholder="Enter your password..."
+                    type="password"
+                    class="border border-dark rounded-3 fs-2"
+                    name="user_password"
+                    formControlName="user_password"
+                />
+
+                <label class="fw-bold text-center my-2 align-self-start">Confirm Password</label>
+                <input 
+                    placeholder="Enter your password..."
+                    type="password"
+                    class="border border-dark rounded-3 fs-2"
+                    name="confirm_password"
+                    formControlName="confirm_password"
+                />
+
+                <p *ngIf="errorMsg !== ''" class="text-danger mt-2">{{ errorMsg }}</p>
+                <button type="submit" class="btn mt-3 mx-5" [disabled]="registerForm.invalid">REGISTER</button>
+            </form>
+            <p class="fs-6">Back to <a [routerLink]="'/'">login!</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <app-footer></app-footer>
+        </div>
+    </div>
+</div>

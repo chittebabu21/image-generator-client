@@ -15,6 +15,12 @@ form button:hover {
     color: var(--primary-color);
 }
 
+p a {
+    cursor: pointer;
+    color: var(--success-color);
+    text-decoration: none;
+}
+
 .container {
     width: 400px;
     height: 100vh;
