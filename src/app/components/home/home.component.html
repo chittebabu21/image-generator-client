@@ -19,7 +19,7 @@
             <div class="d-flex flex-column">
                 <p *ngIf="errorMsg !== ''" class="text-danger mt-2">{{ errorMsg }}</p>
                 <div class="loader align-self-center mt-5" *ngIf="spinnerActive"></div>
-                <img *ngIf="imageName" alt="Generated image" [src]="imageUrl" class="img-fluid rounded mx-auto mt-4 d-block border border-light" />
+                <img *ngIf="imageName && !spinnerActive" alt="Generated image" [src]="imageUrl" class="img-fluid rounded mx-auto mt-4 d-block border border-light" />
             </div>
         </div>
     </div>

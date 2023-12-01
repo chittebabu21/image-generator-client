@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // initialize the form
     this.imageGenForm = new FormGroup({
       prompt: new FormControl('', [Validators.required])
     });

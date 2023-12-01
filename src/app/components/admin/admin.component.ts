@@ -32,26 +32,34 @@ export class AdminComponent implements OnInit {
   }
 
   onDelete(id: number) {
+    // remove the padded zeros
     const formattedId = Number(id);
 
-    this.adminService.deleteUserById(formattedId).subscribe({
-      next: (response: any) => {
-        console.log(response);
+    // window confirm pop up
+    const isConfirmed = window.confirm('Do you want to delete this user?');
 
-        // update the new users list
-        this.users = this.users.filter(user => user.user_id !== formattedId);
-
-        this.cdr.detectChanges();
-        console.log(this.users);
-        
-        // send alert to user
-        alert('User deleted successfully!');
-      },
-      error: (error) => {
-        console.error(error);
-        alert('Error in deleting user...');
-      }
-    });
+    // check if user confirms
+    if (isConfirmed) {
+      this.adminService.deleteUserById(formattedId).subscribe({
+        next: (response: any) => {
+          console.log(response);
+  
+          // update the new users list
+          this.users = this.users.filter(user => user.user_id !== formattedId);
+  
+          // detect changes
+          this.cdr.detectChanges();
+          console.log(this.users);
+          
+          // send alert to user
+          alert('User deleted successfully!');
+        },
+        error: (error) => {
+          console.error(error);
+          alert('Error in deleting user...');
+        }
+      });
+    }
   }
 
   onRefresh() {

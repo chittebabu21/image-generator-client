@@ -19,6 +19,10 @@ export class AdminService {
     return this.http.get<any>(this.userUrl, { headers: headers, params: { origin: '*' }});
   }
 
+  getUserById(id: number) {
+    return this.http.get(`${this.userUrl}/${id}`);
+  }
+
   deleteUserById(id: number) {
     // get token from local storage
     const token = localStorage.getItem('token');

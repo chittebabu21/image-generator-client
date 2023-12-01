@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.registerForm = new FormGroup({
       user_email: new FormControl('', [Validators.required, Validators.email]),
-      user_password: new FormControl('', [Validators.required]),
+      user_password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])/)]),
       confirm_password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])/)])
     });
   }
@@ -50,6 +50,7 @@ export class RegisterComponent implements OnInit {
             next: () => {
               this.errorMsg = '';
               console.log('Registration successful!');
+              alert('User registered successfully!');
               this.router.navigate(['/']);
               this.registerForm.reset();
             },

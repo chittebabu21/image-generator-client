@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
             // get response
             const jsonResponse = response as any;
             console.log('Logged in successfully!');
+            alert('Logged in successfully!');
             this.errorMsg = '';
 
             // save to local storage

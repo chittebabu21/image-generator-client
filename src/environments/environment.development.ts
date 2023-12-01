@@ -4,5 +4,6 @@ export const environment = {
     userUrl: 'http://localhost:4000/users',
     imageUrl: 'http://localhost:4000/images',
     uploadsUrl: 'http://localhost:4000/uploads',
-    adminEmail: 'admin@mail.com'
+    adminEmail: 'admin@mail.com',
+    adminId: '00019'
 };

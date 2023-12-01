@@ -1,7 +1,13 @@
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
 form label {
     color: var(--secondary-color);
     font-size: 20px;
     letter-spacing: 0.1em;
+}
+
+form input {
+    color: var(--secondary-color);
 }
 
 form button {
@@ -19,4 +25,16 @@ form button:hover {
     width: 400px;
     height: 100vh;
     background-color: var(--primary-color);
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#mic {
+    border-radius: 50%;
+    width: fit-content;
+    position: absolute;
 }
